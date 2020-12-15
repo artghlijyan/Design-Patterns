@@ -1,6 +1,6 @@
 ﻿namespace Prototype_Pattern.Prototypes
 {
-    abstract class Prototype
+    abstract class Prototype // or : ICloneable
     {
         public int id;
 
