@@ -9,7 +9,7 @@ namespace Adapter // Adapt incompatable interfaces
         static void Main(string[] args)
         {
             Client client = new Client();
-            
+
             client.UseTv(new Tv());
             client.UseComputer(new Computer());
             client.Use(new IpTv());

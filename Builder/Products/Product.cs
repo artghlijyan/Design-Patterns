@@ -4,19 +4,16 @@ using System.Collections.Generic;
 
 namespace Builder.Products
 {
-    class Product : IEnumerable
+    abstract class AbstractProduct : IEnumerable
     {
-        List<ProductPart> _product;
+        protected List<ProductPart> _product;
 
-        public Product()
+        public AbstractProduct()
         {
             _product = new List<ProductPart>();
         }
-        
-        public void Add(ProductPart part)
-        {
-            _product.Add(part);
-        }
+
+        public abstract void Add(ProductPart part);
 
         public void Show()
         {
@@ -29,6 +26,16 @@ namespace Builder.Products
         public IEnumerator GetEnumerator()
         {
             return _product.GetEnumerator();
+        }
+    }
+
+    class Product : AbstractProduct
+    {
+        public Product() : base() { }
+
+        public override void Add(ProductPart part)
+        {
+            _product.Add(part);
         }
     }
 }

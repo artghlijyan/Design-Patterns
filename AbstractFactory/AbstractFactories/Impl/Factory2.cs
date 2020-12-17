@@ -7,19 +7,14 @@ namespace Abstract_Factory.AbstractFactories.Impl
     {
         public override string Description { get; set; } = "Factory2";
 
-        public override AbstractProductA CreateProductA()
+        protected override AbstractProductA CreateProductA()
         {
             return new ProductA2();
         }
 
-        public override AbstractProductB CreateProductB()
+        protected override AbstractProductB CreateProductB()
         {
             return new ProductB2();
-        }
-
-        public override string ToString()
-        {
-            return this.Description;
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Builder
 
             director.Construct(builder);
 
-            Product finalProduct = builder.GetResult();
+            AbstractProduct finalProduct = builder.GetResult();
 
             finalProduct.Show();
         }

@@ -8,12 +8,12 @@ namespace Prototype_Pattern
         static void Main(string[] args)
         {
             Prototype clone1 = null;
-            Prototype prototype1 = new Prototypes.ConcreteType1(1);
+            Prototype prototype1 = new ConcreteType1(1);
 
             clone1 = prototype1.Clone();
 
             Prototype clone2 = null;
-            Prototype prototype2 = new Prototypes.ConcreteType2(2);
+            Prototype prototype2 = new ConcreteType2(2);
 
             clone2 = prototype2.Clone();
 

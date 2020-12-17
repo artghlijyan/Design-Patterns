@@ -7,4 +7,10 @@
     <AssemblyName>AbstractFactory</AssemblyName>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Client\**" />
+    <EmbeddedResource Remove="Client\**" />
+    <None Remove="Client\**" />
+  </ItemGroup>
+
 </Project>

@@ -7,7 +7,7 @@ namespace Builder.Builders
 {
     class ConcreteBulder : AbstractBuilder
     {
-        Product product = new Product();
+        AbstractProduct product = new Product();
 
         public override void BuildPartA()
         {
@@ -19,7 +19,7 @@ namespace Builder.Builders
             product.Add(new ProductPart2());
         }
 
-        public override Product GetResult()
+        public override AbstractProduct GetResult()
         {
             return product;
         }
