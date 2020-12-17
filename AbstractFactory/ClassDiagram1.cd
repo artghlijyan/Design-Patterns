@@ -67,5 +67,12 @@
       <FileName>AbstractProducts\AbstractProductB.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Design_Patterns.Program" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
