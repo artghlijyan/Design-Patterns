@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Singleton
 {
@@ -13,18 +15,29 @@ namespace Singleton
 
         private Singleton()
         {
-            Version = (new Random()).Next(10);
+            Version = (new Random()).Next(100);
         }
 
         public static Singleton GetInstance()
         {
             lock (_lock)
             {
-                if (singleton is null)
-                    singleton = new Singleton();
-
-                return singleton; 
+                return SetInstance();
             }
+        }
+
+        private static Singleton SetInstance()
+        {
+            if (singleton is null)
+                singleton = new Singleton();
+
+            return singleton;
+        }
+
+        public static async Task<Singleton> GetInstanceAsync()
+        {
+            await Task.Run(SetInstance);
+            return singleton;
         }
 
         public override string ToString()

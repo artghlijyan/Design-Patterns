@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Singleton
 {
@@ -7,16 +8,25 @@ namespace Singleton
     {
         static void Main(string[] args)
         {
-            new Thread(() =>
-            {
-                Thread.Sleep(1000);
-                LazySingleton singleton = LazySingleton.GetInstance();
-                Console.WriteLine(singleton.Version);
-            }).Start();
+            Singleton singleton = null;
 
-            Thread.Sleep(1000);
-            LazySingleton singleton = LazySingleton.GetInstance();
-            Console.WriteLine(singleton.Version);
+            for (int i = 0; i < 100; i++)
+            {
+                Thread.Sleep(100);
+                new Thread(() =>
+                {
+                    if (singleton is null)
+                    {
+                        singleton = Singleton.GetInstanceAsync().Result;
+                        Console.WriteLine("Singletone Version: " + singleton.Version);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Singletone already Set");
+                    }
+
+                }).Start();
+            }
         }
     }
 }
